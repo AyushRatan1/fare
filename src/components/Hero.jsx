@@ -43,7 +43,7 @@ function Hero() {
             Unleash your potential with Ved AI. Experience tailored learning and
             growth through our advanced AI-driven platform.
           </p>
-          <Button href="/pricing" white>
+          <Button href="/features" white>
             Get started
           </Button>
         </div>
