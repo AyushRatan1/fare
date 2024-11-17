@@ -2,6 +2,7 @@
 import React from "react";
 import { PinContainer } from "./pin";
 import Heading from "./Heading"; // Import Heading component
+import Button from "./Button";
 
 // Benefits data
 export const benefits = [
@@ -57,6 +58,9 @@ export function AnimatedPinDemo() {
               </div>
             </PinContainer>
           ))}
+        </div>
+        <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
+          <Button href="https://ved-ai.com/">Let's Dive In</Button>
         </div>
       </div>
     </section>

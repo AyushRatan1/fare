@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { ContainerScroll } from "./ContainerScroll";
-import { robot3 } from "../assets";
 
 export function HeroScrollDemo() {
   return (
@@ -9,7 +8,7 @@ export function HeroScrollDemo() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-white dark:text-white">
+            <h1 className="text-7xl font-semibold text-white dark:text-white">
               Unleash the power
               <br />
               <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none"></span>
@@ -20,7 +19,7 @@ export function HeroScrollDemo() {
         }
       >
         <img
-          src={robot3}
+          src={"/ved-3.png"}
           alt="hero"
           height={720}
           width={1400}
