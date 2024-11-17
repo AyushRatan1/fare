@@ -6,6 +6,7 @@ const Intro = () => {
   const textRef = useRef(null);
   const [parallaxOffset, setParallaxOffset] = useState(0); // For parallax effect
   const [isVideoEnded, setIsVideoEnded] = useState(false); // To check if video ended
+  const [isAutoplaySupported, setIsAutoplaySupported] = useState(true); // Check if autoplay is supported
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +19,19 @@ const Intro = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+
+    // Detect autoplay issues on iOS and other mobile devices
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      const playVideo = async () => {
+        try {
+          await videoElement.play();
+        } catch (error) {
+          setIsAutoplaySupported(false);
+        }
+      };
+      playVideo();
+    }
   }, []);
 
   const handleVideoEnd = () => {
@@ -36,7 +50,9 @@ const Intro = () => {
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay
         muted
+        playsInline
         onEnded={handleVideoEnd} // Trigger video end handler
+        onError={() => setIsAutoplaySupported(false)} // Handle autoplay error
       />
 
       {/* VED AI Text */}
@@ -58,6 +74,22 @@ const Intro = () => {
           VED AI
         </h1>
       </div>
+
+      {/* Fallback button for autoplay issues on iOS */}
+      {!isAutoplaySupported && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <button
+            onClick={() => {
+              if (videoRef.current) {
+                videoRef.current.play(); // Try playing the video after user interaction
+              }
+            }}
+            className="px-4 py-2 bg-blue-500 text-white text-xl font-bold rounded"
+          >
+            Play Video
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -4,32 +4,37 @@ import { PinContainer } from "./pin";
 import Heading from "./Heading"; // Import Heading component
 import Button from "./Button";
 
-// Benefits data
+// Benefits data with images
 export const benefits = [
   {
     id: "0",
     title: "Ask anything",
     text: "Allows students to quickly find answers to learning questions without extensive searching.",
+    image: "ved1.png", // Add image for this benefit
   },
   {
     id: "1",
     title: "Continuous learning",
     text: "Uses advanced AI to support adaptive learning and provide relevant content over time.",
+    image: "ved-3.png", // Add image for this benefit
   },
   {
     id: "2",
     title: "Accessible anywhere",
     text: "Enables access to Ved AI on any device, making learning more convenient.",
+    image: "ved-5.png", // Add image for this benefit
   },
   {
     id: "3",
     title: "Real-time responses",
     text: "Provides fast and accurate responses to support timely learning.",
+    image: "ved-6.png", // Add image for this benefit
   },
   {
     id: "4",
     title: "Comprehensive support",
     text: "Assists with a wide range of educational topics for a complete learning experience.",
+    image: "ved-7.png", // Add image for this benefit
   },
 ];
 
@@ -48,7 +53,15 @@ export function AnimatedPinDemo() {
           {benefits.map((benefit) => (
             <PinContainer key={benefit.id} title={benefit.title} href="#">
               <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
-                <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
+                {/* Image */}
+                <div className="flex justify-center items-center h-2/3 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500 rounded-lg overflow-hidden">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100 mt-4">
                   {benefit.title}
                 </h3>
                 <div className="text-base !m-0 !p-0 font-normal">
