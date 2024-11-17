@@ -11,19 +11,21 @@ import HeroParallax from "./components/HeroParallaxDemo";
 import Pincontainer from "./components/AnimatedPinDemo";
 import Intro from "./components/intro";
 import ContainerScroll from "./components/HeroScrollDemo";
+import Tabs from "./components/TabsDemo";
 const App = () => {
   return (
     <>
       <div className="pt-[4.75em] lg:pt-[5.25rem] overflow-hidden">
         <Header />
-        <Intro />
-        <ContainerScroll />
-        <Pincontainer />
-        <Hero />
 
-        <Collaboration />
-        <MacbookScroll />
+        <Intro />
+        <Pincontainer />
+        <ContainerScroll />
         <Roadmap />
+        <Hero />
+        <Collaboration />
+        <Tabs />
+        <MacbookScroll />
 
         <HeroParallax />
         <GoogleGeminiEffect />
