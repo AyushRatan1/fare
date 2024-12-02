@@ -66,7 +66,7 @@ export function AppleCardsCarouselDemo(): JSX.Element {
                 <div className="p-4 bg-gray-100 rounded-lg">
                   <h3 className="text-xl font-semibold mb-4">SplitFare Web App</h3>
                   <iframe
-                    src="https://pradyumna-burly.github.io/Unfold-2024---CoinSplit/"
+                    src="https://astroherodvaipayan.github.io/unfoldd/"
                     title="SplitFare"
                     width="100%"
                     height="600px"
