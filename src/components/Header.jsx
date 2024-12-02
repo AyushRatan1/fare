@@ -33,9 +33,7 @@ const Header = () => {
     >
       <div className="flex items-center px-5 lg:bg-n-8/90 lg:backdrop-blur-sm">
         <div className="flex items-center px-5 lg:px-7.5 justify-between w-full">
-          <a className="block w-[12rem] xl:mr-8" href="#hero">
-            <img src={ved} alt="VED AI" width={190} height={40} />
-          </a>
+          
           <nav
             className={`${
               openNavigation ? "flex" : "hidden"
@@ -65,9 +63,7 @@ const Header = () => {
           </nav>
           <div className="flex justify-center items-center">
             {/* Explore Button */}
-            <Button className="hidden lg:flex" href="#explore">
-              Explore
-            </Button>
+           
           </div>
         </div>
         <Button
